@@ -1,0 +1,112 @@
+@font-face {
+    src: url(RubikMarkerHatch.ttf);
+    font-family: marker;
+}
+
+@font-face {
+    src: url(oohbaby.ttf);
+    font-family: oohbaby;
+}
+
+html {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 40px;
+    font-family: marker;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 60px;
+    font-size: 40px;
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.pad {
+    width: 2300px;
+    height: 1000px;
+    display: grid;
+    margin-left: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+h1 {
+    text-align: center;
+    font-family: marker;
+    font-size: 80px;
+}
+
+button {
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+    font-family: sans-serif;
+    font-weight: 900;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#colorPicker {
+    border-radius: 10px;
+    align-self: center;
+    margin: 20px;
+}
+
+.resolution {
+    text-decoration: underline;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+    font-family: marker;
+}
+
+.btn:hover {
+    border-color: yellow;
+}
+
+.btn:active {
+    transform: translate(3px, 3px);
+  }
+  
+button.active {
+    background-color: black;
+    color: white;
+  }
+
+input[type='color']::-webkit-color-swatch{
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.50) 0px 2px 4px;
+}
+
+input[type='color']{
+    -webkit-appearance: none ;
+    width: 80px;
+    height: 80px;
+    border: none;
+    transition: all 0.1s ease-in-out;
+}
+
+input[type='text']{
+    font-size: 25px;
+}
