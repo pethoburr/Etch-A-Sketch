@@ -15,32 +15,31 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    margin: 40px;
+    margin: 20px;
     font-family: marker;
 }
 
 footer {
     margin-top: auto;
     text-align: center;
-    padding: 60px;
-    font-size: 40px;
+    padding: 30px;
+    font-size: 20px;
 }
 
 .toolbar {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 10px;
     font-family: sans-serif;
-    font-weight: 900;
-    font-size: 30px;
+    font-size: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .pad {
     width: 2300px;
-    height: 1000px;
+    height: 520px;
     display: grid;
-    margin-left: 40px;
+    margin-left: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -52,13 +51,13 @@ footer {
 h1 {
     text-align: center;
     font-family: marker;
-    font-size: 80px;
+    font-size: 40px;
 }
 
 button {
-    padding: 20px;
-    margin: 10px;
-    border-radius: 20px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
     font-family: sans-serif;
     font-weight: 900;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -67,7 +66,7 @@ button {
 #colorPicker {
     border-radius: 10px;
     align-self: center;
-    margin: 20px;
+    margin: 10px;
 }
 
 .resolution {
@@ -78,6 +77,7 @@ h2 {
     text-align: center;
     text-decoration: underline;
     font-family: marker;
+    padding: 0;
 }
 
 .btn:hover {
@@ -101,12 +101,13 @@ input[type='color']::-webkit-color-swatch{
 
 input[type='color']{
     -webkit-appearance: none ;
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     border: none;
     transition: all 0.1s ease-in-out;
 }
 
 input[type='text']{
-    font-size: 25px;
+    font-size: 10px;
+    width: 60px;
 }
