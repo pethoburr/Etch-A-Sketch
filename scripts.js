@@ -1,11 +1,11 @@
 const colorPicker = document.getElementById('colorPicker');
-const colorBtn = document.getElementById('colrBtn');
+const colorBtn = document.getElementById('colorBtn');
 const blackBtn = document.getElementById('black');
 const rainbowBtn = document.getElementById('rainbow');
 const pencilBtn = document.getElementById('pencil');
 const eraserBtn = document.getElementById('eraser');
 const gridSize = document.querySelector('[data-div-size]');
-colorPicker.oninput = (e) => changeColor(e.target.value);
+colorPicker.oninput = (e) => changeColor(e.target.value); 
 let color = 'black';
 let click = true;
 
@@ -56,7 +56,25 @@ function colorSquare() {
 
 function changeColor(choice) {
     color = choice;
-    
+    switch (color) {
+        case 'black':
+            blackMode();
+            break;
+        case 'random':
+            rainbowMode();
+            break;
+        case 'white':
+            eraserMode();
+            break;
+        case 'input':
+            inputMode();
+            break;
+        case 'pencil':
+            pencilMode();
+            break;
+            default:
+                defaultMode();
+    }
 }
 
 function resetBoard() {
@@ -119,5 +137,51 @@ function colorValues(color)
     }
 }
 
+function blackMode () {
+    blackBtn.classList.add('active');
+    rainbowBtn.classList.remove('active');
+    eraserBtn.classList.remove('active');
+    pencilBtn.classList.remove('active');
+    colorBtn.classList.remove('active');
+}
 
+function rainbowMode () {
+    blackBtn.classList.remove('active');
+    rainbowBtn.classList.add('active');
+    eraserBtn.classList.remove('active');
+    pencilBtn.classList.remove('active');
+    colorBtn.classList.remove('active');
+}
+
+function eraserMode () {
+    blackBtn.classList.remove('active');
+    rainbowBtn.classList.remove('active');
+    eraserBtn.classList.add('active');
+    pencilBtn.classList.remove('active');
+    colorBtn.classList.remove('active');
+}
+
+function pencilMode () {
+    blackBtn.classList.remove('active');
+    rainbowBtn.classList.remove('active');
+    eraserBtn.classList.remove('active');
+    pencilBtn.classList.add('active');
+    colorBtn.classList.remove('active');
+}
+
+function inputMode() {
+    blackBtn.classList.remove('active');
+    rainbowBtn.classList.remove('active');
+    eraserBtn.classList.remove('active');
+    pencilBtn.classList.remove('active');
+    colorBtn.classList.add('active');
+}
+
+function defaultMode () {
+    blackBtn.classList.remove('active');
+    rainbowBtn.classList.remove('active');
+    eraserBtn.classList.remove('active');
+    pencilBtn.classList.remove('active');
+    colorBtn.classList.remove('active');
+}
 

@@ -8,6 +8,11 @@
     font-family: oohbaby;
 }
 
+@font-face {
+    src: url(righteously.ttf);
+    font-family: righteously;
+}
+
 html {
     height: 100%;
 }
@@ -29,11 +34,15 @@ footer {
 .toolbar {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 20px;
     padding-right: 20px;
-    font-family: sans-serif;
+    font-family: righteously;
     font-size: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(226, 246, 9, 0.954), 0 6px 20px 0 rgba(214, 233, 8, 0.891);
+    border-color: yellow;
+    background-image: url('carbonfiber.jpg');
+    color: white;
+
 }
 
 .pad {
@@ -51,7 +60,7 @@ footer {
 
 h1 {
     text-align: center;
-    font-family: marker;
+    font-family: oohbaby;
     font-size: 40px;
 }
 
@@ -59,9 +68,11 @@ button {
     padding: 5px;
     margin: 5px;
     border-radius: 10px;
-    font-family: sans-serif;
+    font-family: righteously;
     font-weight: 900;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: black;
+    color: white;
 }
 
 #colorPicker {
@@ -76,9 +87,11 @@ button {
 
 h2 {
     text-align: center;
-    text-decoration: underline;
-    font-family: marker;
+    font-family: righteously;
+    font-weight: 900;
+    font-size: 35px;
     padding: 0;
+    color: white;
 }
 
 .btn:hover {
@@ -90,9 +103,9 @@ h2 {
     margin-top: 5px;
   }
   
-button.active {
-    background-color: black;
-    color: white;
+.active {
+    background-color: yellow;
+    color: rgb(13, 13, 13);
   }
 
 input[type='color']::-webkit-color-swatch{
