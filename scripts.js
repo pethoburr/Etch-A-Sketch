@@ -5,6 +5,7 @@ const rainbowBtn = document.getElementById('rainbow');
 const pencilBtn = document.getElementById('pencil');
 const eraserBtn = document.getElementById('eraser');
 const gridSize = document.querySelector('[data-div-size]');
+const opaqueBtn = document.getElementById('opaque');
 colorPicker.oninput = (e) => changeColor(e.target.value); 
 let color = 'black';
 let click = true;
@@ -46,11 +47,21 @@ function colorSquare() {
             let currentGrayScaleLevel = colorValues(this.style.backgroundColor)[0];
                     currentGrayScaleLevel-= currentGrayScaleLevel === 7 ? 7 : 64;
                     this.style.backgroundColor = `rgb(${currentGrayScaleLevel},${currentGrayScaleLevel},${currentGrayScaleLevel})`;
-        }
-        else {
-            
-            this.style.backgroundColor = color;
-        }
+        } else if (color === 'opaque') {
+            if (this.style.backgroundColor.match(/rgba/)) {
+                let currentOpacity = Number(this.style.backgroundColor.slice(-4, -1));
+                if (currentOpacity <= 0.9) {
+                    this.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + 0.1})`;
+                    this.classList.add('opaque');
+                }
+            } else if (this.classList == 'opaque' && this.style.backgroundColor == 'rgb(0, 0, 0)') {
+                return;
+            } else {
+                this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';  
+            }
+        } else {
+            this.style.backgroundColor = color;  
+        } 
     }
 }
 
@@ -72,6 +83,8 @@ function changeColor(choice) {
         case 'pencil':
             pencilMode();
             break;
+        case 'opaque':
+            opaqueMode();
             default:
                 defaultMode();
     }
@@ -143,6 +156,7 @@ function blackMode () {
     eraserBtn.classList.remove('active');
     pencilBtn.classList.remove('active');
     colorBtn.classList.remove('active');
+    opaqueBtn.classList.remove('active');
 }
 
 function rainbowMode () {
@@ -151,6 +165,7 @@ function rainbowMode () {
     eraserBtn.classList.remove('active');
     pencilBtn.classList.remove('active');
     colorBtn.classList.remove('active');
+    opaqueBtn.classList.remove('active');
 }
 
 function eraserMode () {
@@ -159,6 +174,7 @@ function eraserMode () {
     eraserBtn.classList.add('active');
     pencilBtn.classList.remove('active');
     colorBtn.classList.remove('active');
+    opaqueBtn.classList.remove('active');
 }
 
 function pencilMode () {
@@ -167,6 +183,7 @@ function pencilMode () {
     eraserBtn.classList.remove('active');
     pencilBtn.classList.add('active');
     colorBtn.classList.remove('active');
+    opaqueBtn.classList.remove('active');
 }
 
 function inputMode() {
@@ -175,6 +192,7 @@ function inputMode() {
     eraserBtn.classList.remove('active');
     pencilBtn.classList.remove('active');
     colorBtn.classList.add('active');
+    opaqueBtn.classList.remove('active');
 }
 
 function defaultMode () {
@@ -183,5 +201,15 @@ function defaultMode () {
     eraserBtn.classList.remove('active');
     pencilBtn.classList.remove('active');
     colorBtn.classList.remove('active');
+    opaqueBtn.classList.remove('active');
+}
+
+function opaqueMode () {
+    blackBtn.classList.remove('active');
+    rainbowBtn.classList.remove('active');
+    eraserBtn.classList.remove('active');
+    pencilBtn.classList.remove('active');
+    colorBtn.classList.remove('active');
+    opaqueBtn.classList.add('active');
 }
 

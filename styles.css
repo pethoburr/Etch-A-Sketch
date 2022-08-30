@@ -1,3 +1,38 @@
+html {
+    font-size: 15px;
+  }
+  
+  @media only screen and (max-width: 800px) {
+    html {
+      font-size: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 550px) {
+    html {
+      font-size: 8px;
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    html {
+      font-size: 7px;
+    }
+
+  }
+
+  @keyframes backgroundGradient {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+  
 @font-face {
     src: url(RubikMarkerHatch.ttf);
     font-family: marker;
@@ -22,6 +57,9 @@ body {
     min-height: 100%;
     margin: 20px;
     font-family: marker;
+    background: linear-gradient(-45deg, #e2592f, #dd1964, #0faee7, #16d861);
+    background-size: 400% 400%;
+    animation: backgroundGradient 15s ease infinite;
 }
 
 footer {
@@ -52,6 +90,18 @@ footer {
     margin-left: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+@keyframes titleShadowZoom {
+    0% {
+      text-shadow: 1px 1px #000000;
+    }
+    50% {
+      text-shadow: 4px 4px #000000;
+    }
+    100% {
+      text-shadow: 1px 1px #000000;
+    }
+  }
 
 .container {
     display: flex;
@@ -127,3 +177,47 @@ input[type='text']{
     font-size: 10px;
     width: 60px;
 }
+
+#rainbow {
+    animation: rainbowButtonBackground 10s ease infinite;
+  }
+  
+  @keyframes rainbowButtonBackground {
+    0% {
+      background-color: #ff6262;
+    }
+    20% {
+      background-color: #ffef62;
+    }
+    40% {
+      background-color: #7cff62;
+    }
+    60% {
+      background-color: #62ffe5;
+    }
+    80% {
+      background-color: #6272ff;
+    }
+    100% {
+      background-color: #ff62ff;
+    }
+  }
+
+  #opaque {
+    animation: opaqueButtonBackground 7s ease infinite;
+  }
+  
+  @keyframes opaqueButtonBackground {
+    0% {
+      opacity: 0%;
+    }
+    50% {
+      opacity: 100%;
+      color: black;
+    }
+    100% {
+      opacity: 0%;
+    }
+  }
+  
+  
