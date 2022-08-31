@@ -22,6 +22,7 @@ function createBoard(size) {
         let square = document.createElement('div');
         square.addEventListener('mouseover', colorSquare)
         square.style.backgroundColor = 'white';
+        square.classList.add('gamecell');
         board.insertAdjacentElement('beforeend', square);
     }
 }
@@ -53,6 +54,7 @@ function colorSquare() {
                 if (currentOpacity <= 0.9) {
                     this.style.backgroundColor = `rgba(0, 0, 0, ${currentOpacity + 0.1})`;
                     this.classList.add('opaque');
+                    console.log(color);
                 }
             } else if (this.classList == 'opaque' && this.style.backgroundColor == 'rgb(0, 0, 0)') {
                 return;
