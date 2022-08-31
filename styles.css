@@ -72,19 +72,20 @@ footer {
 .toolbar {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 20px;
     margin-right: 0px;
     font-family: righteously;
     font-size: 15px;
     color: white;
-    background: linear-gradient(0deg, black, #444444);
+    background-image: url('carbonfiber.jpg');
     position: relative;
 
 }
 
 .pad {
     width: 2300px;
-    height: 1100px;
+    height: 900px;
     display: grid;
     margin-left: 5px;
     box-shadow: 0 4px 8px 0 rgba(219, 142, 142, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
